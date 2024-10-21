@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="flexbox">
+      <div class="div1" style="background-color: blueviolet;">BOX A</div>
+      <div class="div2" style="background-color:aliceblue;">BOX B
+        
+      </div>
+      <div class="div3" style="background-color: red;">BOX C</div>
+      <div class="div4" style="background-color: brown;">BOX D</div>
+      <!-- <div class="div5" style="background-color: green;">BOX E</div>
+      <div class="div6" style="background-color: grey;">BOX f</div> -->
+
+    </div>
+<style>
+    .flexbox{
+        display: flex;
+        background-color: yellow;
+        height: 200px;
+        justify-content: space-between;
+        /* flex-wrap: wrap; */
+        
+        
+    }
+    .div1  , .div2 , .div3 , .div4{
+        height: 200px;
+        width: 200px;
+    }
+    @media only screen and (max-width:800px) {
+        .flexbox{
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            gap: px;
+            
+             
+              
+    }
+   
+    
+    .div2 , .div3{
+        display: flex;
+        width: 100px;
+        flex-flow: row;
+          
+       }
+    
+}
+   
+
+
+</style>
+</body>
+</html>
