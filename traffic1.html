@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic </title>
+</head>
+<body >
+    <center>
+    <div id="container">
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+    </div>
+    <div id="container2">
+        <button id="but1" onclick="green()">START</button>
+        <button id="but2" onclick="yellow()">WAIT</button>
+        <button id="but3" onclick="red()"> STOP</button>
+    </div>
+    <div id="con3" style="width: 40px; height: 150px; background-color: black;margin-top: 20px;"></div>
+     <img id="img2" src="rb_67358.png" width="200px" height="200px">
+    </center>
+    <style>
+        #container{
+            width: 100px;
+            height: 200px;
+            border: 3px solid black;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            
+         
+        }
+        img{
+            margin-left: 800px;
+        }
+        #div1 , #div2 , #div3{
+            width: 60px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 30px;
+            padding-left: 10px;
+           margin-left:  10px;
+           margin-top: 5px;
+
+        }
+        #container2{
+            display: grid;
+            width: 100px;
+            height: 160px;
+            margin-left: 300px;
+            margin-top: -180px;
+            gap: 35px;
+            
+            
+        }
+        body{
+            background-image: url(view-landscape-white-long-asphalt-blue.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+      
+     
+      
+    </style>
+    <script>
+        function green(){
+            var obj
+            document.getElementById("div1").style.backgroundColor="green"
+            var value=0
+        obj=setInterval(movcar,20)
+        function movcar(){
+            document.getElementById("img2").style.marginRight=value+'px'
+            value++
+        }
+           
+            document.getElementById("div1").style.backgroundColor=" "
+            document.getElementById("div3").style.backgroundColor=""
+
+
+
+
+          
+            
+        }
+        function yellow(){
+
+            
+            document.getElementById("div2").style.backgroundColor="yellow"
+
+         clearInterval(obj)
+
+              document.getElementById("div1").style.backgroundColor=""
+
+
+            
+        }
+        function red(){
+        
+            document.getElementById("div3").style.backgroundColor="red"
+              document.getElementById("div2").style.backgroundColor=""
+
+            
+        }
+        
+
+    //     var obj
+    //    function green(){
+    //     var value=0
+    //     obj=setInterval(movcar,10)
+    //     function movcar(){
+    //         document.getElementById("img2").style.marginRight=value+'px'
+    //         value++
+    //     }
+    //    }
+
+
+
+        
+
+    </script>
+</body>
+</html>
