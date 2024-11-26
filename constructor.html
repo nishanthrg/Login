@@ -1,0 +1,26 @@
+<script>
+    //Inheritance
+    class scope{
+        constructor(name,age){
+            this.name=name;
+            this.age=age;
+
+        }
+        hello(){
+            document.write(this.name,this.age)
+        }
+
+    }
+    class scope2 extends scope{
+        constructor (name,age,city){
+            super(name,age)
+            this.city=city;
+        }
+        hi(){
+            document.write("You are from" , +this.city)
+        }
+    }
+    var obj=new scope2("Nishanth",22,"ngl")
+    obj.hello()
+    obj.hi()
+</script>
