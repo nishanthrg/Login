@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+
+    <h1 style="background-color: red; font-size: 60px; font-family: 'Times New Roman', Times, serif;">......FORM SUBMITTED.....</h1>
+    <button id="but1">Click</button>
+    <ol id="list"></ol>
+    <script>
+       var data = ["APPLE ","ORANGE","GRAPE"]
+       var button1=document.getElementById("but1").addEventListener("click" ,function(){
+        for(i of data){
+            var ele = document.createElement("li")
+            var ele1 = document.createTextNode(i)
+            ele.appendChild(ele1)
+            document.getElementById("list").appendChild(ele)
+        }
+       })
+    </script>
+    </center>
+</body>
+</html>
