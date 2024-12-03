@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div1"></div>
+    <button id="but1">Click me</button>
+    <style>
+        .div1{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        $("but1").click(function(){
+            $(".div1").animate({height:"200px"})
+        })
+    </script>
+</body>
+</html>

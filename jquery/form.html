@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <form action="">
+        <label for="">NAME : </label>
+        <input type="text">
+        <label for="">EMAIL :</label>
+        <input type="email">
+        <label for="">Address : </label>
+        <input type="text">
+        <label for="">Gender</label>
+        <label for="">Male</label>
+        <input type="radio" >
+        <label for="">Female</label>
+        <input type="radio">
+    <label for="">COURSE</label>
+    <label for="">CS</label>
+    <input type="checkbox">
+
+    <select name="" id="">
+        <option value="apple">APPLE</option>
+        <option value="apple" selected>Orange</option>
+    </select>
+
+    </form>
+<script>
+    $(document).ready(function(){
+        $("form [type='text']").css("border", "7px solid yellow");
+        $("form select option:selected").css("color", "red");
+    });
+</script>
+</body>
+</html>
