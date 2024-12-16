@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>LIST TO DO</h1>
+        <input type="text" placeholder="Enter data" id="data">
+        <button id="add">Add Task</button>
+        <button id="update">Update</button>
+    </div>
+    <div id="d2">
+        <ul id="list"></ul>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("#add").click(function(){
+                a = $("#data").val()
+                if(a!==""){
+                    $("#list").append("<li class = 'items' >" +a+"</li>" ,"<button class='but1'>Delete</button>","<button class='but2'>Update</button>")
+                    $("#data").val("")
+                }
+            })
+            $("#d2").on("click", ".but1", function () {
+                //  $(this).remove()
+                 $("#list").remove()
+            
+                // del = $(this).parent()
+                // dele = $(del).find("li")
+                // $(dele).remove()
+                // $(this).prev.remove()
+                // $(this).remove()
+            })
+            $("#list").on("click",".but2",function(){
+                b = $("li").text()
+                 $("#data").val(b)
+                 
+            })
+            $("#update").click(function(){
+                c= $("#data").val()
+                $("li").html(c)
+            })
+        })
+    </script>
+</body>
+</html>
