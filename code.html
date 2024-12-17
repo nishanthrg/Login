@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>    <title>Document</title>
+    <script src="https://code.jquery.com/color/jquery.color-3.0.0.js" integrity="sha256-nXuT4oV5wsIpHV/V7Ay53Vf/1rg2lqpiGWoP9CRk2tM=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <button id="but1">Click me</button>
+    <style>
+        .div1{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            position: relative;
+        }
+        .div2{
+            display: flex;
+            width: 200px;
+            margin-left: 1000px;
+            margin-top: -200px;
+            height: 200px;
+            background-color: yellow;
+            position: relative;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#but1").click(function(){
+            $(".div1").animate({left:"+=200px"},2000)
+            $(".div2").animate({right:"500"},2000) 
+            $(".div1").animate({backgroundColor:"red"}).animate({borderRadius:"20px"})
+            .animate({top:"300"},2000)
+            $(".div2").animate({top:"500"},3000) 
+            .animate({backgroundColor:"green"}).animate({borderRadius:"50px"})
+            .animate({left:"300"},2000).animate({borderRadius:"100px"}).animate({backgroundColor:"black"}).animate({top:"-400"},2000)
+           
+          
+        })
+        })
+        
+    </script>
+</body>
+</html>

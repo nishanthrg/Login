@@ -21,3 +21,11 @@
     </script>
 </body>
 </html>
+
+<script>
+    $(document).ready(function(){
+        setInterval(function() {
+            $('.blinking-text').fadeOut(500).fadeIn(500);
+        }, 1000); // Text blinks every second
+    });
+</script>

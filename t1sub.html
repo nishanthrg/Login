@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>    <title>Document</title>
+
+    <title>Document</title>
+
+</head>
+<body>
+    <img id="img1" src="flowers_name_in_english.jpg" alt="" width="200px" height="200px" style="display: none;"> <br>
+    <img id="img2" src="sunset-7760143_1280.jpg" alt="" width="200px" height="200px" style="display: none;"> 
+    <button id="but1"  >Click to display Image</button>
+    <button id="but2" style="display:none;">HIDE</button>
+    <button id="but3" style="display: none;">NEXT IMAGE</button>
+    
+    <style>
+        #but1{
+            border: 3px solid red;
+            border-radius: 10px;
+            box-shadow: 2px 3px 5px green;
+        }
+        
+    </style>
+    <script>
+       $(document).ready(function(){
+            $("#but1").click(function(){
+                $("#img1").show(2000);
+                $("#but3").css("display","inline-block")
+                // $("#but2").css("display","inline-block")
+            });
+            $("#but3").click(function(){
+                $("#img2").show(1000) 
+                $("#but3").css("display","none") 
+                $("#but1").css("display","none")
+                $("#but2").css("display","inline-block")
+            })
+            $("#but2").click(function(){
+                $("#img2").hide(1000)
+                $("#img1").hide(2000)
+                $("#but2").css("display","none")
+                document.write(".....RELOAD THE PAGE .....")
+            
+               
+            })
+            
+
+        });
+    </script>
+</body>
+</html>
