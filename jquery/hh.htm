@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>LIST TO DO</h1>
+        <input type="text" placeholder="Enter data" id="data">
+        <button id="add">Add Task</button>
+        <button id="update">Update Task</button>
+    </div>
+    <div id="d2">
+        <ul id="list"></ul>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            let selectedItem = null;
+
+            // Add task to the list
+            $("#add").click(function() {
+                let task = $("#data").val();
+                if (task !== "") {
+                    let listItem = $("<li class='items'></li>").text(task);
+                    let deleteButton = $("<button class='but1'>Delete</button>");
+                    let updateButton = $("<button class='but2'>Update</button>");
+                    
+                    // Append buttons to the list item
+                    listItem.append(deleteButton, updateButton);
+                    
+                    // Append the new list item to the list
+                    $("#list").append(listItem);
+                    $("#data").val(""); // Clear the input field
+                }
+            });
+
+            // Delete a task
+            $("#d2").on("click", ".but1", function() {
+                $(this).parent().remove(); // Remove the parent <li> of the clicked button
+            });
+
+            // Select task for updating
+            $("#d2").on("click", ".but2", function() {
+                selectedItem = $(this).parent(); // Store the selected <li> element
+                let taskText = selectedItem.text().replace("DeleteUpdate", ""); // Remove the button texts
+                $("#data").val(taskText); // Set the input field with the current task text
+            });
+
+            // Update task
+            $("#update").click(function() {
+                if (selectedItem && $("#data").val() !== "") {
+                    selectedItem.contents().first()[0].nodeValue = $("#data").val(); // Update the task text
+                    $("#data").val(""); // Clear the input field
+                    selectedItem = null; // Reset the selected item
+                }
+            });
+        });
+    </script>
+</body>
+</html>
